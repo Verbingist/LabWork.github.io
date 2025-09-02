@@ -160,7 +160,7 @@ a.interestHref:hover {
 
 .cell {
     display: flex;
-    width: 30px;
+    min-width: 30px;
     min-height: 40px;
     border: 1px solid black;
     font-weight: bold;
@@ -177,17 +177,17 @@ a.interestHref:hover {
 }
 
 .threeRow {
-    width: 90px;
+    min-width: 90px;
     font-weight: lighter;
 }
 
 .sixRow {
-    width: 180px;
+    min-width: 180px;
     font-weight: lighter;
 }
 
 .twelveRow {
-    width: 360px;
+    min-width: 360px;
     font-weight: lighter;
 }
 
@@ -359,9 +359,25 @@ a.liPaginationFooter:hover {
 
     .cell {
         min-height: 20px;
+        min-width: 20px;
     }
 
     .footerMain {
         background-color: aquamarine;
+    }
+
+    .threeRow {
+        min-width: 60px;
+        font-weight: lighter;
+    }
+
+    .sixRow {
+        min-width: 120px;
+        font-weight: lighter;
+    }
+
+    .twelveRow {
+        min-width: 240px;
+        font-weight: lighter;
     }
 }
