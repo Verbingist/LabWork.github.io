@@ -120,9 +120,10 @@ a.interestHref:hover {
     border: 3px solid aquamarine;
     border-radius: 20px;
     width: 90%;
-    height: 30vh;
+    min-height: 30vh;
     padding: 20px;
     margin: 20px 0px;
+    justify-content: stretch;
 }
 
 .interestTypes {
@@ -325,6 +326,63 @@ a.liPaginationFooter:hover {
     display: flex;
     flex-direction: column;
     margin: 20px;
+}
+
+#cardButton {
+    margin: 20px;
+    width: 20vw;
+    height: 10vh;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+#cardButton:hover {
+    background-color: white;
+}
+
+#filmsInput,
+#musicInput,
+#booksInput,
+#hobbyInput {
+    width: 10vw;
+    height: 4vh;
+    margin: 10px 0px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+#hobbyButton,
+#booksButton,
+#musicButton,
+#filmsButton {
+    background-color: aquamarine;
+    width: 10vw;
+    height: 4vh;
+    margin: 10px 0px;
+    border-radius: 20px;
+}
+
+#hobbyButton:hover,
+#booksButton:hover,
+#musicButton:hover,
+#filmsButton:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.error {
+    display: flex;
+    padding: 20px;
+    width: 40vw;
+    height: 15vh;
+    border: 3px solid aquamarine;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 820px) {
