@@ -29,35 +29,35 @@
             <form class="inputForm">
                 <div class="questionBorder">
                     <p>Вопрос 1: Опишите отличия MOND и CDM теорий</p>
-                    <textarea class="input textarea" placeholder="Ваш ответ"></textarea>
+                    <textarea id="questOne" class="input textarea" placeholder="Ваш ответ"></textarea>
                 </div>
                 <div class="questionBorder">
                     <p>Вопрос 2: Значение постоянной хаббла</p>
                     <div class="question">
                         <div class="questionDescription">
                             <p>75 км/с/Мпк</p>
-                            <input name="question" type="radio">
+                            <input id="questTwo1" name="question" type="radio">
                         </div>
                         <div class="questionDescription">
                             <p>65 км/с/Мпк</p>
-                            <input name="question" type="radio">
+                            <input id="questTwo2" name="question" type="radio">
                         </div>
                         <div class="questionDescription">
                             <p>85 км/с/Мпк</p>
-                            <input name="question" type="radio">
+                            <input id="questTwo3" name="question" type="radio">
                         </div>
                     </div>
                 </div>
                 <div class="questionBorder">
                     <p>Вопрос 3: Значение первой космической скорости</p>
-                    <select class="input backButton">
+                    <select id="questThree" class="input backButton">
                         <option>7.9 км/с</option>
                         <option>11.2 км/с</option>
                         <option>16.7 км/с</option>
                     </select>
                 </div>
-                <input class="input" type="text" placeholder="ФИО">
-                <select class="input backButton">
+                <input id="fio" class="input" type="text" placeholder="ФИО">
+                <select id="group" class="input backButton">
                     <option>ИС/б-23-1-о</option>
                     <option>ИС/б-23-2-о</option>
                     <option>ПИ/б-23-1-о</option>
@@ -66,6 +66,9 @@
                 <input class="input backButton" type="submit" placeholder="Подтвердить">
                 <input class="input backButton" type="reset" placeholder="Очистить форму">
             </form>
+            <div class="error hidden">
+                <p id="errorMessage">Данные не введены</p>
+            </div>
         </main>
     </div>
     <footer class="footerMain">
@@ -83,5 +86,5 @@
         </nav>
     </footer>
 </body>
-
+<script src = "./src/Test.js"></script>
 </html>

@@ -27,17 +27,17 @@
         <main class="main">
             <h2>Отправка сообщения на email</h2>
             <form class="inputForm">
-                <input class="input" type="text" placeholder="ФИО">
+                <input id="fio" class="input" type="text" placeholder="ФИО">
                 <div class="questionBorder">
                     <p>Пол</p>
                     <div class="question">
                         <div class="questionDescription">
                             <p>Мужской</p>
-                            <input name="question" type="radio">
+                            <input id="checkGender1" name="question" type="radio">
                         </div>
                         <div class="questionDescription">
                             <p>Женский</p>
-                            <input name="question" type="radio">
+                            <input id="checkGender2" name="question" type="radio">
                         </div>
                     </div>
                 </div>
@@ -47,10 +47,14 @@
                     <option>40+</option>
                     <option>50+</option>
                 </select>
-                <input class="input" type="email" placeholder="email">
+                <input id="email" class="input" type="email" placeholder="email">
+                <input id="phone" class="input" type="text" placeholder="phone">
                 <input class="input backButton" type="submit" placeholder="Подтвердить">
                 <input class="input backButton" type="reset" placeholder="Очистить форму">
             </form>
+            <div class="error hidden">
+                <p id="errorMessage">Данные не введены</p>
+            </div>
         </main>
     </div>
     <footer class="footerMain">
@@ -68,5 +72,6 @@
         </nav>
     </footer>
 </body>
+<script src="./src/Contact.js"></script>
 
 </html>
