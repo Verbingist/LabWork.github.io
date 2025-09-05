@@ -50,7 +50,6 @@ document.addEventListener('submit', function (event) {
         addError('телефон без пробелов и посторонних символов');
         return;
     }
-    console.log('успех');
 });
 
 function addError(message) {
@@ -65,3 +64,99 @@ function addError(message) {
         errorTimeoutId = null;
     }, 3000);
 }
+
+let monthes = [
+    "январь",
+    "февраль",
+    "март",
+    "апрель",
+    "май",
+    "июнь",
+    "июль",
+    "август",
+    "сентябрь",
+    "октябрь",
+    "ноябрь",
+    "декабрь"
+];
+
+document.querySelector('.inputBox').addEventListener('focus', function() {
+    document.querySelector('#calendar').classList.remove('hidden')
+    document.querySelector('.inputBox').blur()
+})
+
+document.querySelector('.day').addEventListener('click', function (event) {
+    if (!event.target.classList.contains('digit')) return
+    let content = document.querySelector('.inputBox')
+    if (content.value.split(' ').length > 2) 
+        content.value = content.value.split(' ')[1]+ " " + content.value.split(' ')[2]
+    content.value = event.target.textContent + " " + content.value
+})
+
+document.querySelector('#calendar').addEventListener('input', function () {
+    let month = document.querySelector('#month').value
+    let monthIndex = getMonthIndex(month)
+    let year = document.querySelector('#years').value
+    document.querySelector('.inputBox').value = month + ' ' + year
+    addDays(monthIndex, year)
+})
+
+function setUpMonth() {
+    let monthSelect = document.querySelector('#month')
+    monthes.forEach(function (item) {
+        let option = document.createElement('option')
+        option.innerHTML = item
+        monthSelect.append(option)
+    })
+}
+
+function setUpYears(maxYear) {
+    let yearsSelect = document.querySelector('#years')
+    for (let i = 2000; i <= maxYear; i++) {
+        let option = document.createElement('option')
+        option.innerHTML = i
+        yearsSelect.append(option)
+    }
+}
+
+function getMonthIndex(month) {
+    return (monthes.findIndex(item => item == month)) + 1
+}
+
+function addDays(month, year) {
+    deleteDays()
+    let daysInMonth = new Date(year, month, 0).getDate();
+    let firstdDate = new Date(year, month - 1, 1);
+    let firstWeekday = (firstdDate.getDay() + 6) % 7;
+    let dayCount = 1
+    let outOfMonth = false
+    for (let i = 1; i < 7; i++) {
+        let week = document.querySelectorAll('.dayRow')[i]
+        for (let j = 0; j < 7; j++) {
+            if (firstWeekday > j && i == 1) {
+                dayCount = ' '
+            }
+            if (dayCount > daysInMonth || outOfMonth) {
+                dayCount = ' '
+                outOfMonth = true
+            }
+            let day = document.createElement('div');
+            day.classList.add('weekDay');
+            day.classList.add('digit');
+            day.innerHTML = dayCount;
+            dayCount++;
+            week.append(day);
+        }
+    }
+}
+
+function deleteDays() {
+    for (let i = 1; i < 7; i++) {
+        document.querySelectorAll('.dayRow')[i].querySelectorAll('div').forEach(item => {
+            item.remove()
+        })
+    }
+}
+
+setUpYears(2025)
+setUpMonth()
