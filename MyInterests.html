@@ -13,37 +13,82 @@
         <a class="mainHref" href="./index.html">Главная</a>
         <nav class="wrapperNavigation">
             <ul class="navigation">
-                <li class="liPagination"><a href="./AboutMePage.html">Обо мне</a></li>
-                <li class="liPagination"><a href="./MyInterests.html"><b>Интересы</b></a></li>
-                <li class="liPagination"><a href="./Learning.html">Учеба</a></li>
-                <li class="liPagination"><a href="./PhotoAblom.html">Фотоальбом</a></li>
-                <li class="liPagination"><a href="./Contact.html">Контакт</a></li>
-                <li class="liPagination"><a href="./DisciplineTest.html">Тест</a></li>
+                <li class="liPagination">
+                    <a id="menuOne" href="./AboutMePage.html">Обо мне</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden1">
+                </li>
+                <li class="liPagination" id="contextMenu">
+                    <a id="menuTwo" href="./MyInterests.html">Интересы</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden2">
+                    <div class="interestList hidden">
+                        <ul>
+                            <li><a href="./MyInterests.html?interest=hobby">Хобби</a></li>
+                            <li><a href="./MyInterests.html?interest=books">Книги</a></li>
+                            <li><a href="./MyInterests.html?interest=music">Музыка</a></li>
+                            <li><a href="./MyInterests.html?interest=games">Игры</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liPagination">
+                    <a id="menuThree" href="./Learning.html">Учеба</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" width="30" class="hidden"
+                        id="hidden3" alt="pokemon">
+                </li>
+                <li class="liPagination">
+                    <a id="menuFour" href="./PhotoAblom.html">Фотоальбом</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden4">
+                </li>
+                <li class="liPagination">
+                    <a id="menuFive" href="./Contact.html">Контакт</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden5">
+                </li>
+                <li class="liPagination">
+                    <a id="menuSix" href="./DisciplineTest.html">Тест</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden6">
+                </li>
+                <li class="liPagination">
+                    <a id="menuSeven" href="./story.html">История</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden7">
+                </li>
             </ul>
         </nav>
-        <span></span>
+        <div id="timer"></div>
     </header>
     <div class="wrapper">
         <main class="main sideLine">
             <div class="interst">
-                <article id="hobby">Хобби</article>
-                <input id="hobbyInput"placeholder="Количество данных">
-                <button id="hobbyButton">Вывести</button>
+                <article id="hobby">
+                    <h3>Хобби</h3>
+                    <input id="hobbyInput" placeholder="Количество данных">
+                    <button id="hobbyButton">Вывести</button>
+                </article>
             </div>
             <div class="interst">
-                <article id="books">Любимые книги</article>
-                <input id="booksInput"placeholder="Количество данных">
-                <button id="booksButton">Вывести</button>
+                <article id="books">
+                    <h3>Любимые книги</h3>
+                    <input id="booksInput" placeholder="Количество данных">
+                    <button id="booksButton">Вывести</button>
+                </article>
             </div>
             <div class="interst">
-                <article id="music">Любимая музыка</article>
-                <input id="musicInput" placeholder="Количество данных">
-                <button id="musicButton">Вывести</button>
+                <article id="music">
+                    <h3>Любимая музыка</h3>
+                    <input id="musicInput" placeholder="Количество данных">
+                    <button id="musicButton">Вывести</button>
+                </article>
             </div>
             <div class="interst">
-                <article id="films">Любимые фильмы</article>
-                <input id="filmsInput" placeholder="Количество данных">
-                <button id="filmsButton">Вывести</button>
+                <article id="games">
+                    <h3>Любимые игры</h3>
+                    <input id="gamesInput" placeholder="Количество данных">
+                    <button id="gamesButton">Вывести</button>
+                </article>
             </div>
         </main>
         <aside class="aside">
@@ -51,7 +96,7 @@
                 <a class="interestHref" href="#hobby">Мои хобби</a>
                 <a class="interestHref" href="#books">Любимые книги</a>
                 <a class="interestHref" href="#music">Любимая музыка</a>
-                <a class="interestHref" href="#films">Любимые фильмы</a>
+                <a class="interestHref" href="#games">Любимые игры</a>
             </div>
         </aside>
     </div>
@@ -71,4 +116,6 @@
     </footer>
 </body>
 <script src="./src/interests.js"></script>
+<script src="./src/main.js"></script>
+
 </html>

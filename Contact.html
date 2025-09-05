@@ -13,15 +13,52 @@
         <a class="mainHref" href="./index.html">Главная</a>
         <nav class="wrapperNavigation">
             <ul class="navigation">
-                <li class="liPagination"><a href="./AboutMePage.html">Обо мне</a></li>
-                <li class="liPagination"><a href="./MyInterests.html">Интересы</a></li>
-                <li class="liPagination"><a href="./Learning.html">Учеба</a></li>
-                <li class="liPagination"><a href="./PhotoAblom.html">Фотоальбом</a></li>
-                <li class="liPagination"><a href="./Contact.html"><b>Контакт</b></a></li>
-                <li class="liPagination"><a href="./DisciplineTest.html">Тест</a></li>
+                <li class="liPagination">
+                    <a id="menuOne" href="./AboutMePage.html">Обо мне</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden1">
+                </li>
+                <li class="liPagination" id="contextMenu">
+                    <a id="menuTwo" href="./MyInterests.html">Интересы</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden2">
+                    <div class="interestList hidden">
+                        <ul>
+                            <li><a href="./MyInterests.html?interest=hobby">Хобби</a></li>
+                            <li><a href="./MyInterests.html?interest=books">Книги</a></li>
+                            <li><a href="./MyInterests.html?interest=music">Музыка</a></li>
+                            <li><a href="./MyInterests.html?interest=games">Игры</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liPagination">
+                    <a id="menuThree" href="./Learning.html">Учеба</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" width="30" class="hidden"
+                        id="hidden3" alt="pokemon">
+                </li>
+                <li class="liPagination">
+                    <a id="menuFour" href="./PhotoAblom.html">Фотоальбом</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden4">
+                </li>
+                <li class="liPagination">
+                    <a id="menuFive" href="./Contact.html">Контакт</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden5">
+                </li>
+                <li class="liPagination">
+                    <a id="menuSix" href="./DisciplineTest.html">Тест</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden6">
+                </li>
+                <li class="liPagination">
+                    <a id="menuSeven" href="./story.html">История</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden7">
+                </li>
             </ul>
         </nav>
-        <span></span>
+        <div id="timer"></div>
     </header>
     <div class="wrapper">
         <main class="main">
@@ -29,7 +66,7 @@
             <form class="inputForm">
                 <input id="fio" class="input" type="text" placeholder="ФИО">
                 <div class="questionBorder">
-                    <p>Пол</p>
+                    <p class="genderTitle">Пол</p>
                     <div class="question">
                         <div class="questionDescription">
                             <p>Мужской</p>
@@ -49,8 +86,34 @@
                 </select>
                 <input id="email" class="input" type="email" placeholder="email">
                 <input id="phone" class="input" type="text" placeholder="phone">
-                <input class="input backButton" type="submit" placeholder="Подтвердить">
-                <input class="input backButton" type="reset" placeholder="Очистить форму">
+                <input class="inputBox" placeholder="Дата">
+                <div id="calendar" class="hidden">
+                    <div class="selectBlock">
+                        <select id="month" class="selectItem">
+                        </select>
+                        <select id="years" class="selectItem">
+                        </select>
+                    </div>
+                    <div class="day">
+                        <div class='dayRow'>
+                            <div class="weekDay">ПН</div>
+                            <div class="weekDay">ВТ</div>
+                            <div class="weekDay">СР</div>
+                            <div class="weekDay">ЧТ</div>
+                            <div class="weekDay">ПТ</div>
+                            <div class="weekDay">СБ</div>
+                            <div class="weekDay">ВС</div>
+                        </div>
+                        <div class='dayRow'></div>
+                        <div class='dayRow'></div>
+                        <div class='dayRow'></div>
+                        <div class='dayRow'></div>
+                        <div class='dayRow'></div>
+                        <div class='dayRow'></div>
+                    </div>
+                </div>
+                <button class="input backButton" type="submit">Подтвердить</button>
+                <button class="input backButton" type="reset">Очистить форму</button>
             </form>
             <div class="error hidden">
                 <p id="errorMessage">Данные не введены</p>
@@ -73,5 +136,6 @@
     </footer>
 </body>
 <script src="./src/Contact.js"></script>
+<script src="./src/main.js"></script>
 
 </html>

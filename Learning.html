@@ -13,15 +13,52 @@
         <a class="mainHref" href="./index.html">Главная</a>
         <nav class="wrapperNavigation">
             <ul class="navigation">
-                <li class="liPagination"><a href="./AboutMePage.html">Обо мне</a></li>
-                <li class="liPagination"><a href="./MyInterests.html">Интересы</a></li>
-                <li class="liPagination"><a href="./Learning.html"><b>Учеба</b></a></li>
-                <li class="liPagination"><a href="./PhotoAblom.html">Фотоальбом</a></li>
-                <li class="liPagination"><a href="./Contact.html">Контакт</a></li>
-                <li class="liPagination"><a href="./DisciplineTest.html">Тест</a></li>
+                <li class="liPagination">
+                    <a id="menuOne" href="./AboutMePage.html">Обо мне</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden1">
+                </li>
+                <li class="liPagination" id="contextMenu">
+                    <a id="menuTwo" href="./MyInterests.html">Интересы</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden2">
+                    <div class="interestList hidden">
+                        <ul>
+                            <li><a href="./MyInterests.html?interest=hobby">Хобби</a></li>
+                            <li><a href="./MyInterests.html?interest=books">Книги</a></li>
+                            <li><a href="./MyInterests.html?interest=music">Музыка</a></li>
+                            <li><a href="./MyInterests.html?interest=games">Игры</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liPagination">
+                    <a id="menuThree" href="./Learning.html">Учеба</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" width="30" class="hidden"
+                        id="hidden3" alt="pokemon">
+                </li>
+                <li class="liPagination">
+                    <a id="menuFour" href="./PhotoAblom.html">Фотоальбом</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden4">
+                </li>
+                <li class="liPagination">
+                    <a id="menuFive" href="./Contact.html">Контакт</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden5">
+                </li>
+                <li class="liPagination">
+                    <a id="menuSix" href="./DisciplineTest.html">Тест</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden6">
+                </li>
+                <li class="liPagination">
+                    <a id="menuSeven" href="./story.html">История</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden7">
+                </li>
             </ul>
         </nav>
-        <span></span>
+        <div id="timer"></div>
     </header>
     <div class="wrapper">
         <main class="main">
@@ -29,202 +66,200 @@
                 <h2>Севастопольский государственный университет</h2>
                 <h3>Информационные системы</h3>
             </div>
-            <div class=table>
-                <div class="flexRow">
-                    <div class="cell disciplineNameStart">№</div>
-                    <div class="cell disciplineName disciplineNameStart">Дисциплина</div>
-                    <div class="column">
-                        <div class="cell twelveRow">Часов в неделю</div>
-                        <div class="row">
-                            <div class="cell sixRow">1 курс</div>
-                            <div class="cell sixRow">2 курс</div>
-                        </div>
-                        <div class="row">
-                            <div class="cell threeRow">1 сем</div>
-                            <div class="cell threeRow">2 сем</div>
-                            <div class="cell threeRow">3 сем</div>
-                            <div class="cell threeRow">4 сем</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="cell">1</div>
-                    <div class="cell disciplineName">Экология</div>
-                    <div class="cell">5</div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">2</div>
-                    <div class="cell disciplineName">Высшая математика </div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">3</div>
-                    <div class="cell disciplineName">Русский язык и культура речи</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">4</div>
-                    <div class="cell disciplineName">Основы дискретной математики</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">5</div>
-                    <div class="cell disciplineName">Основы программирования и алгоритмические
-                        языки </div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">6</div>
-                    <div class="cell disciplineName">Основы экологии</div>
-                    <div class="cell">5</div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">7</div>
-                    <div class="cell disciplineName">Теория вероятностей и математическая статистика</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">8</div>
-                    <div class="cell disciplineName">Физика</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">9</div>
-                    <div class="cell disciplineName">Основы электротехники и электроники</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell">5</div>
-                </div>
-                <div class="row">
-                    <div class="cell">10</div>
-                    <div class="cell disciplineName">Численные методы в информатике</div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-                <div class="row">
-                    <div class="cell">11</div>
-                    <div class="cell disciplineName">Методы исследования операций</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell">5</div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                </div>
-            </div>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="cell disciplineNameStart" rowspan="3">№</td>
+                    <td class="cell disciplineName disciplineNameStart" rowspan="3">Дисциплина</td>
+                    <td class="cell twelveRow" colspan="12">Часов в неделю</td>
+                </tr>
+                <tr>
+                    <td class="cell sixRow" colspan="6">1 курс</td>
+                    <td class="cell sixRow" colspan="6">2 курс</td>
+                </tr>
+                <tr>
+                    <td class="cell threeRow" colspan="3">1 сем</td>
+                    <td class="cell threeRow" colspan="3">2 сем</td>
+                    <td class="cell threeRow" colspan="3">3 сем</td>
+                    <td class="cell threeRow" colspan="3">4 сем</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">1</td>
+                    <td class="cell disciplineName">Экология</td>
+                    <td class="cell">5</td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">2</td>
+                    <td class="cell disciplineName">Высшая математика </td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">3</td>
+                    <td class="cell disciplineName">Русский язык и культура речи</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">4</td>
+                    <td class="cell disciplineName">Основы дискретной математики</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">5</td>
+                    <td class="cell disciplineName">Основы программирования и алгоритмические
+                        языки </td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">6</td>
+                    <td class="cell disciplineName">Основы экологии</td>
+                    <td class="cell">5</td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">7</td>
+                    <td class="cell disciplineName">Теория вероятностей и математическая статистика</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">8</td>
+                    <td class="cell disciplineName">Физика</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">9</td>
+                    <td class="cell disciplineName">Основы электротехники и электроники</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell">5</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">10</td>
+                    <td class="cell disciplineName">Численные методы в информатике</td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">11</td>
+                    <td class="cell disciplineName">Методы исследования операций</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell">5</td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+            </table>
         </main>
     </div>
     <footer class="footerMain">
@@ -242,5 +277,7 @@
         </nav>
     </footer>
 </body>
+<script src="./src/main.js"></script>
+
 
 </html>
