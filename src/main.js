@@ -17,7 +17,7 @@ document.querySelector('.navigation').addEventListener('mouseover', function (ev
         resetImage()
         return
     }
-    if (event.target.id == "index") {
+    if (event.target.id == "AboutMePage") {
         addImage(0);
     }
     else if (event.target.id == "MyInterests") {
