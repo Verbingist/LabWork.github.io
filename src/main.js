@@ -13,25 +13,29 @@ function resetImage() {
 }
 
 document.querySelector('.navigation').addEventListener('mouseover', function (event) {
-    if (event.target.id == "menuOne") {
+    if (event.target.id == window.location.href.split('/').pop().split('.')[0]) {
+        resetImage()
+        return
+    }
+    if (event.target.id == "index") {
         addImage(0);
     }
-    else if (event.target.id == "menuTwo") {
+    else if (event.target.id == "MyInterests") {
         addImage(1);
     }
-    else if (event.target.id == "menuThree") {
+    else if (event.target.id == "Learning") {
         addImage(2);
     }
-    else if (event.target.id == "menuFour") {
+    else if (event.target.id == "PhotoAblom") {
         addImage(3);
     }
-    else if (event.target.id == "menuFive") {
+    else if (event.target.id == "Contact") {
         addImage(4);
     }
-    else if (event.target.id == "menuSix") {
+    else if (event.target.id == "DisciplineTest") {
         addImage(5);
     }
-    else if (event.target.id == "menuSeven") {
+    else if (event.target.id == "story") {
         addImage(6);
     }
 })
@@ -71,7 +75,7 @@ let weekDays = ['понедельник', 'вторник', 'среда', 'че�
 function addTimer() {
     let currentDate = new Date()
     let timer = document.querySelector('#timer')
-    let day, month, year;
+    let day, month, year, weekday;
     if (currentDate.getDate().toString().length < 2)
         day = '0' + currentDate.getDate()
     else
@@ -81,7 +85,11 @@ function addTimer() {
     else
         month = currentDate.getMonth() + 1
     year = currentDate.getFullYear();
-    timerString = day + "." + month + '.' + year + " " + weekDays[currentDate.getDay() - 1]
+    if (!currentDate.getDay())
+        weekday = weekDays[6];
+    else 
+        weekday = weekDays[currentDate.getDay() - 1]
+    timerString = day + "." + month + '.' + year + " " + weekday
     timer.textContent = timerString
 }
 

@@ -60,6 +60,11 @@ document.querySelector('#cardButton').addEventListener('click', function () {
 
             item.append(pokemon);
 
+            img.addEventListener('click', function (event) {
+                document.querySelector('#absolutePhoto').classList.remove('hidden')
+                document.querySelector('#absolutePhoto').querySelector('img').src = event.target.src
+            })
+
             pokemon.append(img);
             pokemon.append(description);
             pokemon.append(plug);
@@ -68,3 +73,34 @@ document.querySelector('#cardButton').addEventListener('click', function () {
     });
     document.querySelector('#cardButton').hidden = true;
 });
+
+document.addEventListener('click', function(event) {
+    if (event.target.tagName == 'IMG') return
+    document.querySelector('#absolutePhoto').classList.add('hidden')
+})
+
+let total = Number(localStorage.getItem('photo'))
+
+if (!total) total = 0
+total = ++total
+
+localStorage.setItem('photo', total)
+
+
+
+function setCookie(name, value) {
+    const expires = "; expires=Thu, 01 Jan 2077 00:00:00 GMT";
+    document.cookie = name + "=" + value + expires + "; path=";
+}
+
+function getCookie(name) {
+    let item = document.cookie.split('; ').find(function (item) {
+        return item.startsWith(name + '=');
+    });
+    if (!item) return 0;
+    return Number(item.split('=')[1]);
+}
+
+let storyCount = getCookie('photo')
+storyCount++
+setCookie('photo', storyCount)

@@ -14,12 +14,12 @@
         <nav class="wrapperNavigation">
             <ul class="navigation">
                 <li class="liPagination">
-                    <a id="menuOne" href="./AboutMePage.html">Обо мне</a>
+                    <a id="index" href="./AboutMePage.html">Обо мне</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" width="30" alt="pokemon"
                         class="hidden" id="hidden1">
                 </li>
                 <li class="liPagination" id="contextMenu">
-                    <a id="menuTwo" href="./MyInterests.html">Интересы</a>
+                    <a id="MyInterests" href="./MyInterests.html">Интересы</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" width="30" alt="pokemon"
                         class="hidden" id="hidden2">
                     <div class="interestList hidden">
@@ -32,27 +32,27 @@
                     </div>
                 </li>
                 <li class="liPagination">
-                    <a id="menuThree" href="./Learning.html">Учеба</a>
+                    <a id="Learning" href="./Learning.html">Учеба</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" width="30" class="hidden"
                         id="hidden3" alt="pokemon">
                 </li>
                 <li class="liPagination">
-                    <a id="menuFour" href="./PhotoAblom.html">Фотоальбом</a>
+                    <a id="PhotoAblom" href="./PhotoAblom.html">Фотоальбом</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" width="30" alt="pokemon"
                         class="hidden" id="hidden4">
                 </li>
                 <li class="liPagination">
-                    <a id="menuFive" href="./Contact.html">Контакт</a>
+                    <a id="Contact" href="./Contact.html">Контакт</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png" width="30" alt="pokemon"
                         class="hidden" id="hidden5">
                 </li>
                 <li class="liPagination">
-                    <a id="menuSix" href="./DisciplineTest.html">Тест</a>
+                    <a id="DisciplineTest" href="./DisciplineTest.html">Тест</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png" width="30" alt="pokemon"
                         class="hidden" id="hidden6">
                 </li>
                 <li class="liPagination">
-                    <a id="menuSeven" href="./story.html">История</a>
+                    <a id="story" href="./story.html">История</a>
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png" width="30" alt="pokemon"
                         class="hidden" id="hidden7">
                 </li>
@@ -65,6 +65,10 @@
             <h2>Отправка сообщения на email</h2>
             <form class="inputForm">
                 <input id="fio" class="input" type="text" placeholder="ФИО">
+                <div class="error hidden redBorder" id="fioError">
+                    <p id="errorMessageFio">Данные не введены</p>
+                </div>
+
                 <div class="questionBorder">
                     <p class="genderTitle">Пол</p>
                     <div class="question">
@@ -78,15 +82,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="error hidden redBorder" id="genderError">
+                    <p id="errorMessageGender">Данные не введены</p>
+                </div>
+
                 <select class="input backButton">
                     <option>20+</option>
                     <option>30+</option>
                     <option>40+</option>
                     <option>50+</option>
                 </select>
+
                 <input id="email" class="input" type="email" placeholder="email">
+                <div class="error hidden redBorder" id="emailError">
+                    <p id="errorMessageError">Данные не введены</p>
+                </div>
+
                 <input id="phone" class="input" type="text" placeholder="phone">
-                <input class="inputBox" placeholder="Дата">
+                <div class="error hidden redBorder" id="phoneError">
+                    <p id="errorMessagePhone">Данные не введены</p>
+                </div>
+
+                <input class="inputBox" placeholder="Дата" id="dateInput">
                 <div id="calendar" class="hidden">
                     <div class="selectBlock">
                         <select id="month" class="selectItem">
@@ -112,10 +129,14 @@
                         <div class='dayRow'></div>
                     </div>
                 </div>
-                <button class="input backButton" type="submit">Подтвердить</button>
+                <div class="error hidden redBorder" id="dateError">
+                    <p id="errorMessageDate">Данные не введены</p>
+                </div>
+
+                <button id="Submit" class="input backButton" type="submit" disabled>Подтвердить</button>
                 <button class="input backButton" type="reset">Очистить форму</button>
             </form>
-            <div class="error hidden">
+            <div class="error hidden" id="globalError">
                 <p id="errorMessage">Данные не введены</p>
             </div>
         </main>
