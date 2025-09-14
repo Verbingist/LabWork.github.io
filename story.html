@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Главная</title>
+</head>
+
+<body>
+    <header class="header">
+        <a class="mainHref" href="./index.html">Главная</a>
+        <nav class="wrapperNavigation">
+            <ul class="navigation">
+                <li class="liPagination">
+                    <a id="index" href="./AboutMePage.html">Обо мне</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden1">
+                </li>
+                <li class="liPagination" id="contextMenu">
+                    <a id="MyInterests" href="./MyInterests.html">Интересы</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden2">
+                    <div class="interestList hidden">
+                        <ul>
+                            <li><a href="./MyInterests.html?interest=hobby">Хобби</a></li>
+                            <li><a href="./MyInterests.html?interest=books">Книги</a></li>
+                            <li><a href="./MyInterests.html?interest=music">Музыка</a></li>
+                            <li><a href="./MyInterests.html?interest=games">Игры</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liPagination">
+                    <a id="Learning" href="./Learning.html">Учеба</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" width="30" class="hidden"
+                        id="hidden3" alt="pokemon">
+                </li>
+                <li class="liPagination">
+                    <a id="PhotoAblom" href="./PhotoAblom.html">Фотоальбом</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden4">
+                </li>
+                <li class="liPagination">
+                    <a id="Contact" href="./Contact.html">Контакт</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden5">
+                </li>
+                <li class="liPagination">
+                    <a id="DisciplineTest" href="./DisciplineTest.html">Тест</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden6">
+                </li>
+                <li class="liPagination">
+                    <a id="story" href="./story.html">История</a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png" width="30" alt="pokemon"
+                        class="hidden" id="hidden7">
+                </li>
+            </ul>
+        </nav>
+        <div id="timer"></div>
+    </header>
+    <div class="wrapper">
+        <main class="main">
+            <div class="informationAboutLab">
+                <table class="table storyTable" cellpadding="0" cellspacing="0">
+                    <tr class="row storyRow">
+                        <td class="cell storyCell" colspan="2">История текущего сеанса</td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Название страницы</td>
+                        <td class="cell storyCell">Количество посещений</td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Главная</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Обо мне</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Интересы</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Учеба</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Фотоальбом</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Контакт</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Тест</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">История</td>
+                        <td class="cell storyCell current"></td>
+                    </tr>
+                </table>
+                <table class="table storyTable" cellpadding="0" cellspacing="0">
+                    <tr class="row storyRow">
+                        <td class="cell storyCell" colspan="2">История за все время</td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Название страницы</td>
+                        <td class="cell storyCell">Количество посещений</td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Главная</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Обо мне</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Интересы</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Учеба</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Фотоальбом</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Контакт</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">Тест</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                    <tr class="row storyRow">
+                        <td class="cell storyCell">История</td>
+                        <td class="cell storyCell total"></td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+    <footer class="footerMain">
+        <nav class="footer none">
+            <div class="hrefColumn">
+                <a class="liPaginationFooter" href="./AboutMePage.html">Обо мне</a>
+                <a class="liPaginationFooter" href="./MyInterests.html">Интересы</a>
+                <a class="liPaginationFooter" href="./Learning.html">Учеба</a>
+            </div>
+            <div class="hrefColumn">
+                <a class="liPaginationFooter" href="./PhotoAblom.html">Фотоальбом</a>
+                <a class="liPaginationFooter" href="./Contact.html">Контакт</a>
+                <a class="liPaginationFooter" href="./DisciplineTest.html">Тест</a>
+            </div>
+        </nav>
+    </footer>
+</body>
+<script src="./src/main.js"></script>
+<script src="./src/story.js"></script>
+
+</html>
