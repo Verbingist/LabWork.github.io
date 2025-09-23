@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Контакт</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
+    <div id="blurOverlay"></div>
     <header class="header">
         <a class="mainHref" href="./index.html">Главная</a>
         <nav class="wrapperNavigation">
@@ -62,23 +64,36 @@
     </header>
     <div class="wrapper">
         <main class="main">
+            <div id="enterSubmit" class="boxOfSubmit">
+                <span>Вы уверены что хотите отправить?</span>
+                <div class="subBoxOfSubmit">
+                    <button id="sumbitYes">Да</button>
+                    <button id="sumbitNo">Нет</button>
+                </div>
+            </div>
             <h2>Отправка сообщения на email</h2>
             <form class="inputForm">
-                <input id="fio" class="input" type="text" placeholder="ФИО">
+                <div class="questionWrapper">
+                    <input id="fio" class="input" type="text" placeholder="ФИО">
+                    <div id="fiohelp" class="helpMessage">Введите фамилию, имя, отчество 3 отдельными словами с двумя
+                        пробелами</div>
+                </div>
                 <div class="error hidden redBorder" id="fioError">
                     <p id="errorMessageFio">Данные не введены</p>
                 </div>
 
-                <div class="questionBorder">
-                    <p class="genderTitle">Пол</p>
-                    <div class="question">
-                        <div class="questionDescription">
-                            <p>Мужской</p>
-                            <input id="checkGender1" name="question" type="radio">
-                        </div>
-                        <div class="questionDescription">
-                            <p>Женский</p>
-                            <input id="checkGender2" name="question" type="radio">
+                <div class="questionWrapper">
+                    <div class="questionBorder">
+                        <p class="genderTitle">Пол</p>
+                        <div class="question">
+                            <div class="questionDescription">
+                                <p>Мужской</p>
+                                <input id="checkGender1" name="question" type="radio">
+                            </div>
+                            <div class="questionDescription">
+                                <p>Женский</p>
+                                <input id="checkGender2" name="question" type="radio">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,12 +108,19 @@
                     <option>50+</option>
                 </select>
 
-                <input id="email" class="input" type="email" placeholder="email">
+                <div class="questionWrapper">
+                    <input id="email" class="input" type="email" placeholder="email">
+                    <div id="emailhelp" class="helpMessage">Введите почту с @mail.ru</div>
+                </div>
                 <div class="error hidden redBorder" id="emailError">
                     <p id="errorMessageError">Данные не введены</p>
                 </div>
 
-                <input id="phone" class="input" type="text" placeholder="phone">
+                <div class="questionWrapper">
+                    <div id="phonehelp" class="helpMessage">Введите телефон длиной 9-11 символов, начинающийся с +7 или
+                        +3 без посторонних символов</div>
+                    <input id="phone" class="input" type="text" placeholder="phone">
+                </div>
                 <div class="error hidden redBorder" id="phoneError">
                     <p id="errorMessagePhone">Данные не введены</p>
                 </div>

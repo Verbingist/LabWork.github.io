@@ -1,66 +1,68 @@
-let error = document.querySelector('#globalError');
+let error = $('#globalError');
 let errorTimeoutId = null;
+$('#enterSubmit').hide()
+$('#blurOverlay').hide()
 
-document.addEventListener('submit', function (event) {
+$(document).on('submit', function (event) {
     event.preventDefault();
-    let fio = document.querySelector('#fio').value;
+    let fio = $('#fio').val();
     if (!fio) {
-        document.querySelector('#fio').focus();
+        $('#fio').focus();
         addError('ФИО');
         return;
     }
     if (fio.split(' ').length != 3) {
-        document.querySelector('#fio').focus();
+        $('#fio').focus();
         addError('ФИО тремя словами');
         return;
     }
     let gender;
-    if (document.querySelector('#checkGender1').checked)
+    if ($('#checkGender1').prop('checked'))
         gender = 'male';
-    else if (document.querySelector('#checkGender2').checked)
+    else if ($('#checkGender2').prop('checked'))
         gender = 'female';
     else {
         addError('пол');
         return;
     }
-    let email = document.querySelector('#email').value;
+    let email = $('#email').val();
     if (!email) {
-        document.querySelector('#email').focus();
+        $('#email').focus();
         addError('почту');
         return;
     }
-    let phone = document.querySelector('#phone').value;
+    let phone = $('#phone').val();
     if (!phone) {
-        document.querySelector('#phone').focus();
+        $('#phone').focus();
         addError('телефон');
         return;
     }
     if (phone.length < 9 || phone.length > 11) {
-        document.querySelector('#phone').focus();
+        $('#phone').focus();
         addError('телефон c длинной 9-11 символов');
         return;
     }
     if (!(phone[0] == '+' && (phone[1] == '7' || phone[1] == '3'))) {
-        document.querySelector('#phone').focus();
+        $('#phone').focus();
         addError('телефон, который начинается с +7 или +3');
         return;
     }
     if (!(/^\d+$/.test(phone.slice(1, phone.length)))) {
-        document.querySelector('#phone').focus();
+        $('#phone').focus();
         addError('телефон без пробелов и посторонних символов');
         return;
     }
 });
 
 function addError(message) {
-    error.classList.remove('hidden');
-    document.querySelector('#errorMessage').textContent = 'Введите ' + message;
+    error.removeClass('hidden');
+    $('#errorMessage').text('Введите ' + message);
 
     if (errorTimeoutId !== null) {
         clearTimeout(errorTimeoutId);
     }
     errorTimeoutId = setTimeout(() => {
-        error.classList.add('hidden');
+        error.addClass('hidden');
         errorTimeoutId = null;
     }, 3000);
 }
@@ -80,41 +82,39 @@ let monthes = [
     "декабрь"
 ];
 
-document.querySelector('.inputBox').addEventListener('focus', function () {
-    document.querySelector('#calendar').classList.remove('hidden')
-    document.querySelector('.inputBox').blur()
+$('.inputBox').on('focus', function () {
+    $('#calendar').removeClass('hidden')
+    $('.inputBox').blur()
 })
 
-document.querySelector('.day').addEventListener('click', function (event) {
+$('.day').on('click', function (event) {
     if (!event.target.classList.contains('digit')) return
-    let content = document.querySelector('.inputBox')
-    if (content.value.split(' ').length > 2)
-        content.value = content.value.split(' ')[1] + " " + content.value.split(' ')[2]
-    content.value = event.target.textContent + " " + content.value
+    let content = $('.inputBox')
+    if (content.val().split(' ').length > 2)
+        content.val(content.val().split(' ')[1] + " " + content.val().split(' ')[2])
+    content.val(event.target.textContent + " " + content.val())
 })
 
-document.querySelector('#calendar').addEventListener('input', function () {
-    let month = document.querySelector('#month').value
+$('#calendar').on('input', function () {
+    let month = $('#month').val()
     let monthIndex = getMonthIndex(month)
-    let year = document.querySelector('#years').value
-    document.querySelector('.inputBox').value = month + ' ' + year
+    let year = $('#years').val()
+    $('.inputBox').val(month + ' ' + year)
     addDays(monthIndex, year)
 })
 
 function setUpMonth() {
-    let monthSelect = document.querySelector('#month')
+    let monthSelect = $('#month')
     monthes.forEach(function (item) {
-        let option = document.createElement('option')
-        option.innerHTML = item
+        let option = $('<option></option>').html(item);
         monthSelect.append(option)
     })
 }
 
 function setUpYears(maxYear) {
-    let yearsSelect = document.querySelector('#years')
+    let yearsSelect = $('#years')
     for (let i = 2000; i <= maxYear; i++) {
-        let option = document.createElement('option')
-        option.innerHTML = i
+        let option = $('<option></option>').html(i);
         yearsSelect.append(option)
     }
 }
@@ -131,7 +131,7 @@ function addDays(month, year) {
     let dayCount = 1
     let outOfMonth = false
     for (let i = 1; i < 7; i++) {
-        let week = document.querySelectorAll('.dayRow')[i]
+        let week = $('.dayRow').eq(i)
         for (let j = 0; j < 7; j++) {
             if (firstWeekday > j && i == 1) {
                 dayCount = ' '
@@ -140,10 +140,7 @@ function addDays(month, year) {
                 dayCount = ' '
                 outOfMonth = true
             }
-            let day = document.createElement('div');
-            day.classList.add('weekDay');
-            day.classList.add('digit');
-            day.innerHTML = dayCount;
+            let day = $('<div></div>').html(dayCount).addClass('weekDay digit');
             dayCount++;
             week.append(day);
         }
@@ -152,9 +149,7 @@ function addDays(month, year) {
 
 function deleteDays() {
     for (let i = 1; i < 7; i++) {
-        document.querySelectorAll('.dayRow')[i].querySelectorAll('div').forEach(item => {
-            item.remove()
-        })
+        $('.dayRow').eq(i).find('div').remove();
     }
 }
 
@@ -166,42 +161,40 @@ setUpMonth()
 
 
 function allowSendData() {
-    let fio = document.querySelector('#fio').value;
-    let email = document.querySelector('#email').value;
-    let phone = document.querySelector('#phone').value;
-    let date = document.querySelector('#dateInput').value
+    let fio = $('#fio').val();
+    let email = $('#email').val();
+    let phone = $('#phone').val();
+    let date = $('#dateInput').val();
 
     if (!fio || fio.split(' ').length != 3 ||
-        !(document.querySelector('#checkGender1').checked || document.querySelector('#checkGender2').checked) ||
+        !($('#checkGender1').prop('checked') || $('#checkGender2').prop('checked')) ||
         !email || !phone || phone.length < 9 || phone.length > 11 || !(phone[0] == '+' && (phone[1] == '7' || phone[1] == '3')) ||
         !(/^\d+$/.test(phone.slice(1, phone.length))) || !date || (date.split(' ').length < 2)) {
-        document.querySelector('#Submit').disabled = true
+        $('#Submit').prop('disabled', true);
     }
     else {
-        document.querySelector('#Submit').disabled = false
+        $('#Submit').prop('disabled', false);
     }
-
-    console.log('aaa')
 }
 
-document.querySelectorAll('input').forEach(function (item) {
-    item.addEventListener('input', allowSendData)
-    item.addEventListener('change', allowSendData)
-    document.querySelector('#month').addEventListener('change', allowSendData);
-    document.querySelector('#years').addEventListener('change', allowSendData);
-    document.querySelectorAll('.digit').forEach(day => {
-        day.addEventListener('click', allowSendData);
+$('input').each(function (index, item) {
+    $(item).on('input', allowSendData)
+    $(item).on('change', allowSendData)
+    $('#month').on('change', allowSendData);
+    $('#years').on('change', allowSendData);
+    $('.digit').each((index, day) => {
+        $(day).on('click', allowSendData);
     });
 })
 
 function removeLocalError(elemId) {
-    document.querySelector('#' + elemId).classList.add('hidden');
+    $('#' + elemId).addClass('hidden');
 }
 
 function addDotedError(elemId, messageErrorId, errorText) {
-    let localError = document.querySelector('#' + elemId)
-    localError.classList.remove('hidden');
-    document.querySelector('#' + messageErrorId).textContent = 'Введите ' + errorText;
+    let localError = $('#' + elemId)
+    localError.removeClass('hidden');
+    $('#' + messageErrorId).text('Введите ' + errorText);
 
     if (errorTimeoutId !== null) {
         clearTimeout(errorTimeoutId);
@@ -212,7 +205,7 @@ function addDotedError(elemId, messageErrorId, errorText) {
     }, 3000);
 }
 
-document.querySelector('#fio').addEventListener('blur', function (event) {
+$('#fio').on('blur', function (event) {
     if (!event.target.value) {
         event.target.classList.remove('green');
         event.target.classList.add('red');
@@ -232,7 +225,7 @@ document.querySelector('#fio').addEventListener('blur', function (event) {
     }
 })
 
-document.querySelector('#email').addEventListener('blur', function (event) {
+$('#email').on('blur', function (event) {
     if (!event.target.value) {
         event.target.classList.remove('green');
         event.target.classList.add('red');
@@ -246,7 +239,7 @@ document.querySelector('#email').addEventListener('blur', function (event) {
     }
 })
 
-document.querySelector('#phone').addEventListener('blur', function (event) {
+$('#phone').on('blur', function (event) {
     if (!event.target.value) {
         event.target.classList.remove('green');
         event.target.classList.add('red');
@@ -302,3 +295,72 @@ function getCookie(name) {
 let storyCount = getCookie('contact')
 storyCount++
 setCookie('contact', storyCount)
+
+
+
+
+
+$(document).on('submit', function (event) {
+    event.preventDefault();
+    $('#blurOverlay').show();
+    $('#enterSubmit').show(500);
+})
+
+$('#sumbitYes').on('click', function () {
+    $('#enterSubmit').hide()
+    $('#blurOverlay').hide(500);
+})
+
+$('#sumbitNo').on('click', function () {
+    $('#enterSubmit').hide()
+    $('#blurOverlay').hide(500);
+})
+
+
+
+let timerInterval = null;
+let currentHelpId = null;
+
+function hideHelfMessages(timer = 0) {
+    $('.helpMessage').each((index, item) => {
+        $(item).fadeOut(timer)
+    })
+    currentHelpId = null;
+}
+
+hideHelfMessages()
+
+function showHelpMessage(id) {
+    if (timerInterval) {
+        clearTimeout(timerInterval);
+        timerInterval = null;
+    }
+    if (currentHelpId == id) return;
+    hideHelfMessages(0);
+    $(id).fadeIn(500)
+    currentHelpId = id
+}
+
+$('#email').on('mouseover', function () {
+    showHelpMessage('#emailhelp')
+})
+
+$('#email').on('mouseout', function () {
+    timerInterval = setTimeout(hideHelfMessages, 1000, 500)
+})
+
+$('#fio').on('mouseover', function () {
+    showHelpMessage('#fiohelp')
+})
+
+$('#fio').on('mouseout', function () {
+    timerInterval = setTimeout(hideHelfMessages, 1000, 500)
+})
+
+$('#phone').on('mouseover', function () {
+    showHelpMessage('#phonehelp')
+})
+
+$('#phone').on('mouseout', function () {
+    timerInterval = setTimeout(hideHelfMessages, 1000, 500)
+})

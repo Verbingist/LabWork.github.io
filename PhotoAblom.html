@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Фотоальбом</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
@@ -73,6 +74,12 @@
             </div>
             <div id="absolutePhoto" class="hidden photoBorder">
                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="bigPokemon">
+                <div id="title"></div>
+                <div class="selectPhoto">
+                    <button id="firstButton" class="selectorPhoto buttonSwitch">←</button>
+                    <span id="photonumber" class="selectorPhoto">фото 1</span>
+                    <button id="secondButton" class="selectorPhoto buttonSwitch">→</button>
+                </div>
             </div>
         </main>
     </div>

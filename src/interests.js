@@ -34,42 +34,40 @@ let games = [
     "Dragon Quest"
 ];
 
-function createElements(arrayName, number, parent) {
+function createElements(arrayName, number, $parent) {
     if (isNaN(number)) return;
-    if (parent.lastElementChild && parent.lastElementChild.tagName && parent.lastElementChild.tagName == 'UL') parent.lastElementChild.remove();
-    let ul = document.createElement('ul');
+    if ($parent.children('ul').length) $parent.children('ul').last().remove();
+    let $ul = $('<ul></ul>');
     arrayName.forEach(function (item, index) {
         if ((index + 1) > number) {
-            parent.append(ul);
+            $parent.append($ul);
             return;
         }
-        let li = document.createElement('li');
-        li.classList.add('interestTypes');
-        li.textContent = item;
-        ul.append(li);
+        let $li = $('<li></li>').addClass('interestTypes').text(item);
+        $ul.append($li);
     });
-    parent.append(ul);
+    $parent.append($ul);
 }
 
-document.querySelector('main').addEventListener('click', function (event) {
+$('main').on('click', function (event) {
     if (event.target.id == 'hobbyButton') {
-        let value = document.querySelector('#hobbyInput').value;
-        let parent = document.querySelector('#hobbyInput').parentElement;
+        let value = $('#hobbyInput').val();
+        let parent = $('#hobbyInput').parent();
         createElements(hobbies, value, parent);
     }
     if (event.target.id == 'booksButton') {
-        let value = document.querySelector('#booksInput').value;
-        let parent = document.querySelector('#booksInput').parentElement;
+        let value = $('#booksInput').val();
+        let parent = $('#booksInput').parent();
         createElements(books, value, parent);
     }
     if (event.target.id == 'musicButton') {
-        let value = document.querySelector('#musicInput').value;
-        let parent = document.querySelector('#musicInput').parentElement;
+        let value = $('#musicInput').val();
+        let parent = $('#musicInput').parent();
         createElements(music, value, parent);
     }
     if (event.target.id == 'gamesButton') {
-        let value = document.querySelector('#gamesInput').value;
-        let parent = document.querySelector('#gamesInput').parentElement;
+        let value = $('#gamesInput').val();
+        let parent = $('#gamesInput').parent();
         createElements(games, value, parent);
     }
 });
@@ -86,19 +84,19 @@ function anchorToInteres() {
 
     switch (interest) {
         case 'hobby': {
-            document.querySelector('#hobby').scrollIntoView();
+            $('#hobby')[0].scrollIntoView();
             break;
         }
         case 'music': {
-            document.querySelector('#music').scrollIntoView();
+            $('#music')[0].scrollIntoView();
             break;
         }
         case 'games': {
-            document.querySelector('#games').scrollIntoView();
+            $('#games')[0].scrollIntoView();
             break;
         }
         case 'books': {
-            document.querySelector('#books').scrollIntoView();
+            $('#books')[0].scrollIntoView();
             break;
         }
     }
