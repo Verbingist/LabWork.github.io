@@ -37,15 +37,15 @@ let cookieNames = [
 ];
 
 
-document.querySelectorAll('.total').forEach(function (item, index) {
+$('.total').each(function (index) {
     let data = getCookie(cookieNames[index]);
     if (!data) data = 0;
-    item.textContent = data;
+    $(this).text(data);
 })
 
 
-document.querySelectorAll('.current').forEach(function(item, index) {
+$('.current').each(function(index) {
     let data = localStorage.getItem(cookieNames[index]);
     if (!data) data = 0;
-    item.textContent = data;
+    $(this).text(data);
 })

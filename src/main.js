@@ -1,18 +1,18 @@
 function addImage(index) {
     resetImage();
-    let li = document.querySelectorAll('.liPagination')[index];
-    li.querySelector('a').classList.toggle('hidden');
-    li.querySelector('img').classList.toggle('hidden');
+    let li = $('.liPagination').eq(index);
+    li.children('a').toggleClass('hidden');
+    li.find('img').toggleClass('hidden');
 }
 
 function resetImage() {
-    document.querySelectorAll('.liPagination').forEach(function (item) {
-        item.querySelector('a').classList.remove('hidden');
-        item.querySelector('img').classList.add('hidden');
+    $('.liPagination').each(function (index, item) {
+        $(item).find('a').removeClass('hidden');
+        $(item).find('img').addClass('hidden');
     })
 }
 
-document.querySelector('.navigation').addEventListener('mouseover', function (event) {
+$('.navigation').on('mouseover', function (event) {
     if (event.target.id == window.location.href.split('/').pop().split('.')[0]) {
         resetImage()
         return
@@ -40,12 +40,12 @@ document.querySelector('.navigation').addEventListener('mouseover', function (ev
     }
 })
 
-document.querySelector('.navigation').addEventListener('click', function (event) {
+$('.navigation').on('click', function (event) {
     if (event.target.id == "hidden1") {
         window.location.href = 'AboutMePage.html';
     }
     else if (event.target.id == "hidden2") {
-        document.querySelector('.interestList').classList.toggle('hidden')
+        $('.interestList').toggleClass('hidden')
     }
     else if (event.target.id == "hidden3") {
         window.location.href = 'Learning.html';
@@ -64,9 +64,9 @@ document.querySelector('.navigation').addEventListener('click', function (event)
     }
 })
 
-document.querySelector('#contextMenu').addEventListener('mouseleave', function (event) {
+$('#contextMenu').on('mouseleave', function (event) {
     if (!event.currentTarget.contains(event.relatedTarget)) {
-        document.querySelector('.interestList').classList.add('hidden');
+        $('.interestList').addClass('hidden');
     }
 });
 
@@ -74,7 +74,7 @@ let weekDays = ['понедельник', 'вторник', 'среда', 'че�
 
 function addTimer() {
     let currentDate = new Date()
-    let timer = document.querySelector('#timer')
+    let timer = $('#timer')
     let day, month, year, weekday;
     if (currentDate.getDate().toString().length < 2)
         day = '0' + currentDate.getDate()
@@ -87,10 +87,10 @@ function addTimer() {
     year = currentDate.getFullYear();
     if (!currentDate.getDay())
         weekday = weekDays[6];
-    else 
+    else
         weekday = weekDays[currentDate.getDay() - 1]
-    timerString = day + "." + month + '.' + year + " " + weekday
-    timer.textContent = timerString
+    let timerString = day + "." + month + '.' + year + " " + weekday
+    timer.text(timerString)
 }
 
 addTimer()

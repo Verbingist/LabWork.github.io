@@ -17,52 +17,61 @@ let arrayOfUrl = [
 ];
 
 let titles = [
-    "Бульбазавр",
+    "Бульбазавр1",
     "Чармандер",
-    "Бульбазавр",
+    "Бульбазавр3",
     "Пикачу",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
-    "Бульбазавр",
+    "Бульбазавр5",
+    "Бульбазавр6",
+    "Бульбазавр7",
+    "Бульбазавр8",
+    "Бульбазавр9",
+    "Бульбазавр10",
+    "Бульбазавр11",
+    "Бульбазавр12",
+    "Бульбазавр13",
+    "Бульбазавр14",
+    "Бульбазавр15",
 ];
 
-let rows = document.querySelectorAll('.imgRow');
+let currentPhoto = 1;
+let currentSrc = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png';
+let title = titles[0]
 
-document.querySelector('#cardButton').addEventListener('click', function () {
-    rows.forEach(function (item, index) {
+let rows = $('.imgRow');
+
+$('#cardButton').on('click', function () {
+    rows.each(function (index, item) {
         for (let i = 0; i < 5; i++) {
-            let pokemon = document.createElement('div');
-            pokemon.classList.add('pokemon');
+            let pokemon = $('<div></div>').addClass('pokemon');
 
-            let img = document.createElement('img');
-            img.src = arrayOfUrl[i + index * 5];
-            img.width = 250;
-            img.style.height = 'auto';
+            let img = $('<img>');
+            img.prop('src', arrayOfUrl[i + index * 5]);
+            img.css('width', 250);
+            img.css('height', 'auto');
 
-            let description = document.createElement('p');
-            description.classList.add('details');
-            description.textContent = titles[i + index * 5];
 
-            let plug = document.createElement('p');
-            plug.classList.add('plug');
-            plug.textContent = " ";
+            let description = $('<p></p>');
+            description.addClass('details');
+            description.text(titles[i + index * 5]);
 
-            let title = document.createElement('p');
-            title.textContent = titles[i + index * 5];
+            let plug = $('<p></p>');
+            plug.addClass('plug');
+            plug.text(" ");
 
-            item.append(pokemon);
+            let title = $('<p></p>');
+            title.text(titles[i + index * 5]);
 
-            img.addEventListener('click', function (event) {
-                document.querySelector('#absolutePhoto').classList.remove('hidden')
-                document.querySelector('#absolutePhoto').querySelector('img').src = event.target.src
+            $(item).append(pokemon);
+
+            img.on('click', function (event) {
+                $('#absolutePhoto').fadeIn(1000)
+                $('#absolutePhoto').find('img').prop('src', event.target.src);
+                currentPhoto = arrayOfUrl.indexOf(event.target.src);
+                currentSrc = arrayOfUrl[currentPhoto];
+                title = titles[currentPhoto]
+                $('#photonumber').text('Фото: ' + (currentPhoto + 1) + ' из 15')
+                $('#title').text(title)
             })
 
             pokemon.append(img);
@@ -71,12 +80,13 @@ document.querySelector('#cardButton').addEventListener('click', function () {
             pokemon.append(title);
         }
     });
-    document.querySelector('#cardButton').hidden = true;
+    $('#cardButton').prop('hidden', true);
 });
 
-document.addEventListener('click', function(event) {
-    if (event.target.tagName == 'IMG') return
-    document.querySelector('#absolutePhoto').classList.add('hidden')
+
+$(document).on('click', function (event) {
+    if (event.target.tagName == 'IMG' || event.target.tagName == 'BUTTON') return
+    $('#absolutePhoto').hide(1000)
 })
 
 let total = Number(localStorage.getItem('photo'))
@@ -104,3 +114,41 @@ function getCookie(name) {
 let storyCount = getCookie('photo')
 storyCount++
 setCookie('photo', storyCount)
+
+let isAnimating = false;
+
+$('#firstButton').on('click', function () {
+    if (currentPhoto == 0 || isAnimating) return;
+    isAnimating = true
+    $('#absolutePhoto').find('img').fadeOut(500, function () {
+        --currentPhoto;
+        $('#absolutePhoto').find('img').prop('src', arrayOfUrl[currentPhoto]);
+        $('#absolutePhoto').find('img').fadeIn(500, function () {
+            isAnimating = false
+        })
+        $('#photonumber').text('Фото: ' + (currentPhoto + 1) + ' из 15')
+        currentSrc = arrayOfUrl[currentPhoto]
+        title = titles[currentPhoto]
+        $('#title').text(title)
+    })
+})
+
+$('#secondButton').on('click', function () {
+    if (currentPhoto >= 14 || isAnimating) return
+    isAnimating = true
+    $('#absolutePhoto').find('img').fadeOut(500, function () {
+        ++currentPhoto;
+        $('#absolutePhoto').find('img').prop('src', arrayOfUrl[currentPhoto]);
+        $('#absolutePhoto').find('img').fadeIn(500, function () {
+            isAnimating = false
+        })
+        $('#photonumber').text('Фото: ' + (currentPhoto + 1) + ' из 15')
+        currentSrc = arrayOfUrl[currentPhoto];
+        title = titles[currentPhoto]
+        $('#title').text(title)
+    })
+})
+
+$(document).ready(function () {
+    $('#absolutePhoto').hide();
+});
