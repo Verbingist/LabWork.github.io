@@ -81,7 +81,7 @@ function addTimer() {
     else
         day = currentDate.getDate()
     if (currentDate.getMonth().toString().length < 2)
-        month = '0' + (currentDate.getMonth() + 1)
+        month = (currentDate.getMonth() + 1)
     else
         month = currentDate.getMonth() + 1
     year = currentDate.getFullYear();

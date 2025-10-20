@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Paper Cuts 2';
+  src: url("/assets/Paper Cuts 2.ttf"); }
+body .header,
+html .header, body .header .interestList,
+html .header .interestList, body .footerMain,
+html .footerMain, body .footerMain .footer,
+html .footerMain .footer {
+  background: #53cfc0;
+  background: linear-gradient(188deg, #53cfc0 27%, #3fd95e 81%); }
+
+body,
+html {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+  body .header,
+  html .header {
+    color: white;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px; }
+    body .header a.mainHref,
+    html .header a.mainHref {
+      font-size: 40px; }
+    body .header a.mainHref,
+    body .header .navigation a,
+    html .header a.mainHref,
+    html .header .navigation a {
+      text-decoration: none;
+      color: white;
+      font-size: 25px; }
+    body .header a.mainHref:hover,
+    body .header .navigation a:hover,
+    html .header a.mainHref:hover,
+    html .header .navigation a:hover {
+      color: black; }
+    body .header .navigation,
+    html .header .navigation {
+      display: flex;
+      flex-direction: row; }
+    body .header .liPagination a,
+    html .header .liPagination a {
+      font-size: 17px;
+      margin: 20px; }
+    body .header .interestList,
+    html .header .interestList {
+      position: absolute;
+      right: 880px;
+      width: 100px;
+      height: 120px;
+      border: 1px solid black; }
+  body .wrapper,
+  html .wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: stretch; }
+    body .wrapper .main,
+    html .wrapper .main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 20px;
+      width: 70%;
+      flex: 1; }
+      body .wrapper .main img,
+      html .wrapper .main img {
+        margin: 100px;
+        box-shadow: 5px 6px 15px -8px #000000; }
+      body .wrapper .main .text,
+      html .wrapper .main .text {
+        padding: 25px;
+        height: 300px;
+        margin-right: 150px;
+        text-align: justify;
+        border: 2px solid #53cfc0;
+        border-radius: 20px;
+        box-shadow: 5px 6px 15px -8px #000000; }
+  body .footerMain,
+  html .footerMain {
+    min-height: 10%;
+    margin-top: 30px; }
+    body .footerMain .footer.none,
+    html .footerMain .footer.none {
+      display: none; }
+    body .footerMain .footer,
+    html .footerMain .footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      margin-top: 30px;
+      min-height: 10%; }
+      body .footerMain .footer .hrefColumn,
+      html .footerMain .footer .hrefColumn {
+        display: flex;
+        flex-direction: column;
+        margin: 20px; }
+        body .footerMain .footer .hrefColumn .liPaginationFooter,
+        html .footerMain .footer .hrefColumn .liPaginationFooter {
+          margin: 5px; }
+        body .footerMain .footer .hrefColumn a.liPaginationFooter,
+        html .footerMain .footer .hrefColumn a.liPaginationFooter {
+          text-decoration: none;
+          color: black; }
+        body .footerMain .footer .hrefColumn a.liPaginationFooter:hover,
+        html .footerMain .footer .hrefColumn a.liPaginationFooter:hover {
+          color: white; }
+  body *,
+  html * {
+    font-family: "Paper Cuts 2", Times, serif;
+    box-sizing: border-box; }
+  body .img,
+  html .img {
+    border: 3px solid #53cfc0;
+    border-radius: 20px; }
+  body ul,
+  html ul {
+    list-style-type: none;
+    padding: 0px 0px; }
+  body .hidden,
+  html .hidden {
+    display: none; }
+  @media (max-width: 820px) {
+    body .footerMain .footer.none,
+    html .footerMain .footer.none {
+      display: flex; }
+    body .wrapperNavigation,
+    html .wrapperNavigation {
+      display: none; }
+    body .header,
+    html .header {
+      min-height: 50px; } }
+
+/*# sourceMappingURL=user.css.map */
