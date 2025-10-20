@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Paper Cuts 2';
-  src: url("/assets/Paper Cuts 2.ttf"); }
+  src: url("../assets/Paper Cuts 2.ttf"); }
 body .header,
 html .header, body .header .interestList,
 html .header .interestList, body .footerMain,
